@@ -33,5 +33,40 @@ public class NewGame {
         panelGame.add(label_background);
         panelGame.add(new JLabel());
         newGame.add(panelGame);
+
+        setButtons(panelGame);
     }
+
+    private void setButtons(JPanel panelGame){
+        JButton humanPlayer = new JButton("Human Player");
+        JButton aiPlayer = new JButton("Ai Player");
+        humanPlayer.setFont(font);
+        aiPlayer.setFont(font);
+        humanPlayer.setBackground(new Color(89, 104, 228));
+        aiPlayer.setBackground(new Color(89, 104, 228));
+
+        panelGame.add(humanPlayer);
+        panelGame.add(aiPlayer);
+
+
+
+        humanPlayer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // implement later
+                newGame.setVisible(false);
+
+            }
+        });
+
+        aiPlayer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // implement later
+                newGame.setVisible(false);
+            }
+        });
+
+    }
+
 }
