@@ -15,10 +15,22 @@ public class Game {
 
         font = new Font("AliFont",Font.ITALIC,20);
 
+        setPanel();
 
         startFrame.setVisible(true);
     }
 
+    private void setPanel(){
+        JPanel startPanel = new JPanel();
+        startPanel.setOpaque(true);
+        startPanel.setBackground(new Color(4, 13, 31));
 
+        ImageIcon chess = new ImageIcon("Images/background/1.png");
+        JLabel label = new JLabel(chess);
+        startPanel.add(label);
+        startPanel.add(new JLabel());
+        startFrame.add(startPanel);
+
+    }
 
 }
