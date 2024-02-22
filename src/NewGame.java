@@ -53,7 +53,7 @@ public class NewGame {
         humanPlayer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // implement later
+                new HumanPlayer();
                 newGame.setVisible(false);
 
             }
@@ -62,11 +62,26 @@ public class NewGame {
         aiPlayer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // implement later
+                int[][] places = new int[8][8];
+                Game.startBoard(places);
+                JFrame frame = new JFrame();
+                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                frame.setBounds(300,100,800,700);
+                frame.setResizable(false);
+                frame.setLayout(new BorderLayout());
+                frame.setVisible(true);
+
+                Board b = null;
+                try {
+                    b = new Board(places,0,true,false);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                frame.add(b);
+                frame.revalidate();
                 newGame.setVisible(false);
             }
         });
 
     }
-
 }
