@@ -1,7 +1,7 @@
 class config{
     int[][] arr = new int[8][8];
-    int turn ; // if it was 0 --> white turn   1--> black turn
-    int ai_Player_Is_Playing; // if it was 0 --> ai is not playing  ; if 1 --> ai is playing
-    int ai_Player_Is_White; // if it was 0 --> ai player is not white ; if 1 --> ai is white
+    int turn ; // turn equals 0 if white turn, and equals 1 if black turn
+    int ai_Player_Is_Playing; // 1 --> playing with ai mode, 0 --> playing with user
+    int ai_Player_Is_White; // 1 --> ai is white pieces, 0 --> ai is black pieces
 
 }
