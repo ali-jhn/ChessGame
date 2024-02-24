@@ -23,7 +23,8 @@ public class LoadGame {
 
         
         try {
-            b = new Board(readfromfile().arr,readfromfile().turn,readfromfile().ai_Player_Is_Playing == 1,readfromfile().ai_Player_Is_White == 1);
+            Config config = readfromfile();
+            b = new Board(config.arr,readfromfile().turn,config.ai_Player_Is_Playing == 1,config.ai_Player_Is_White == 1);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -32,18 +33,18 @@ public class LoadGame {
     }
 
 
-    public static config readfromfile() throws FileNotFoundException {
+    public static Config readfromfile() throws FileNotFoundException {
         Scanner scanner = new Scanner(new File("Config/config.txt"));
-        config help = new config();
+        Config config = new Config();
         for(int i = 0 ; i< 8 ; i++){
             for(int j = 0 ; j < 8 ; j++){
-                help.arr[i][j] = scanner.nextInt();
+                config.arr[i][j] = scanner.nextInt();
             }
         }
-        help.turn = scanner.nextInt();
-        help.ai_Player_Is_Playing = scanner.nextInt();
-        help.ai_Player_Is_White = scanner.nextInt();
-        return help;
+        config.turn = scanner.nextInt();
+        config.ai_Player_Is_Playing = scanner.nextInt();
+        config.ai_Player_Is_White = scanner.nextInt();
+        return config;
     }
 
 
