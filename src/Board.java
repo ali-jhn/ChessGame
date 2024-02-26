@@ -294,7 +294,7 @@ public class Board extends JPanel {
                                 int[][] after = new int[8][8];
                                 changearray1to2(after,aiObject.nextMove(places,AiPlayer_is_white));
                                 // now temp = places  ;  "after" array = after ai player has moved
-                                helpAi helpai = new helpAi();
+                                info helpai = new info();
                                 helpai = differences(temp,after);
                                 places[helpai.x2][helpai.y2] = helpai.id;
                                 places[helpai.x1][helpai.y1] = 0;
@@ -393,9 +393,9 @@ public class Board extends JPanel {
         }
     }
 
-    private static helpAi differences(int[][] arr1 , int[][] arr2){
+    private static info differences(int[][] arr1 , int[][] arr2){
 
-        helpAi o = new helpAi();
+        info o = new info();
         int c = 0;
         for(int i = 0 ; i< 8 ; i++){
             for(int j = 0 ; j< 8 ; j++){
@@ -421,7 +421,7 @@ public class Board extends JPanel {
 
 }
 
-class helpAi{
+class info{
     int x1;
     int y1;
     int x2;
